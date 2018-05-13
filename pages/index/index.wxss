@@ -1,0 +1,130 @@
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 15rpx;
+  width: 100%;
+  padding: 10rpx 0;
+}
+.icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+.icon-menu {
+  margin-left: 30rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.icon-update {
+  margin-right:30rpx;
+}
+.main {
+  background: #fff;
+  width: 100%;
+  margin-top: 30rpx;
+  border-radius: 25rpx;
+}
+swiper {
+  height: 750rpx;
+  border: none;
+}
+.swiper-item {
+  text-align: center;
+}
+.location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current-city {
+  color: #f3b13c;
+  font-weight: 500;
+  font-size: 36rpx;
+}
+.current-city-pin {
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  color: #512011;
+}
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30rpx;
+}
+.item-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  margin-left: 20rpx;
+  padding-top: 35rpx;
+  padding-bottom: 40rpx;
+}
+.day-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 40rpx;
+}
+.weather-logo {
+  width: 240rpx;
+  height: 240rpx;
+}
+.logo {
+  display: inline-block;
+  width: 90rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background-color: #c9bea3;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+  color: #fff;
+}
+.text-intro {
+  color: #212121;
+}
+.day-info {
+  font-size: 28rpx;
+  color: #9c9c9c;
+}
+.tem-intro {
+  font-size: 38rpx;
+  color: #512011;
+  margin-top: 15rpx;
+}
+.text-intro {
+  font-size: 40rpx;
+  color: #212121;
+  font-weight: 600;
+  margin-top: 15rpx;
+}
+.wind-intro {
+  padding: 8rpx 10rpx;
+  background-color: #f3b13c;
+  color: #fff;
+  font-size: 34rpx;
+  border-radius: 10rpx;
+  margin-top: 15rpx;
+}
+.share-ct {
+  width: 100%;
+  padding: 15rpx 10rpx;
+  text-align: center;
+  border-radius: 15rpx;
+  background-color:#fff;
+  margin-top:25rpx;
+}
+.share-btn {
+  width: 80%;
+  height: 94rpx;
+  outline: none;
+  background: #f3b13c;
+  color: #fff;
+  border-radius: 15rpx;
+  margin-top: 50rpx;
+}

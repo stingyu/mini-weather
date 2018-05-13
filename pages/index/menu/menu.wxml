@@ -1,0 +1,13 @@
+<!--pages/index/menu/menu.wxml-->
+<view class="container">
+  <view class="main-menu">
+    <view class="item-menu" bindtap='gotoWeather'>
+      <view>当前城市未来10天的天气</view>
+      <image class="icon-next" src="../../../images/next.png"></image>
+    </view>
+    <view class="item-menu" style="border:none;" bindtap="goto24h">
+      <view>当前城市24小时的温度</view>
+      <image class="icon-next" src="../../../images/next.png"></image>
+    </view>
+  </view>
+</view>

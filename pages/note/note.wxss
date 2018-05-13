@@ -1,0 +1,76 @@
+/* pages/note/note.wxss */
+.note-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius:10rpx;
+}
+.top-title {
+  color: #fff;
+  font-size:42rpx;
+  font-weight: 400;
+  background-color: #f3b13c;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  width:100%;
+  border-radius:10rpx 10rpx 0 0;
+}
+.main-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; 
+  width:100%;
+  color:rgb(33,33,33);
+  font-size:32rpx;
+  background-color: #fff;
+}
+.item-note {
+ display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  width:83%;
+  height:110rpx;
+  line-height:110rpx;
+  margin-left:80rpx;
+  padding-right:40rpx;
+  border-bottom:1rpx solid #ccc;
+}
+.option-note {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+.icon {
+  width:40rpx;
+  height:40rpx;
+}
+.icon-edit {
+  margin-right:30rpx;
+}
+.add-note {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width:100%; 
+  padding-top:45rpx;
+  padding-bottom:40rpx;
+  border-radius:0 0 10rpx 10rpx;
+}
+input {
+  border:1rpx solid #ccc;
+  border-radius: 10rpx;
+  margin-left:37rpx;
+  width:516rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.icon-add {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left:56rpx;
+}

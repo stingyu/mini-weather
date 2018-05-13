@@ -1,0 +1,64 @@
+<template name="sun">
+  <view class="icon-weather sun"></view>
+</template>
+<template name="moon">
+  <view class="icon-weather moon"></view>
+</template>
+<template name="cloud">
+  <view class="icon-weather cloud cloud--silver"></view>
+</template>
+<template name="cloud-black">
+  <view class="icon-weather cloud cloud--black"></view>
+</template>
+<template name="sun-cloud">
+  <view class="icon-weather sun sun--with-cloud">
+    <view class="icon-weather cloud cloud--silver"></view>
+  </view>
+</template>
+<template name="moon-cloud">
+  <view class="icon-weather moon moon--with-cloud">
+    <view class="icon-weather cloud cloud--silver"></view>
+  </view>
+</template>
+<template name="rain">
+  <view class="icon-weather cloud cloud--black cloud--with-precipitation">
+    <view class="icon-weather rain"></view>
+  </view>
+</template>
+<template name="heavy-rain">
+  <view class="icon-weather cloud cloud--black cloud--with-precipitation">
+    <view class="icon-weather rain rain--heavy"></view>
+  </view>
+</template>
+<template name="cloud-rain">
+  <view class="icon-weather sun sun--with-cloud">
+    <view class="icon-weather cloud cloud--black">
+      <view class="icon-weather rain"></view>
+    </view>
+  </view>
+</template>
+<template name="snow">
+  <view class="icon-weather cloud cloud--black cloud--with-precipitation">
+    <view class="icon-weather snow"></view>
+  </view>
+</template>
+<template name="heavy-snow">
+  <view class="icon-weather cloud cloud--black cloud--with-precipitation">
+    <view class="icon-weather snow snow--heavy"></view>
+  </view>
+</template>
+<template name="hail">
+  <view class="icon-weather cloud cloud--black cloud--with-precipitation">
+    <view class="icon-weather hail"></view>
+  </view>
+</template>
+<template name="heavy-hail">
+  <view class="icon-weather cloud cloud--black cloud--with-precipitation">
+    <view class="icon-weather hail hail--heavy"></view>
+  </view>
+</template>
+<template name="lightning">
+  <view class="icon-weather cloud cloud--black cloud--with-precipitation">
+    <view class="icon-weather lightning"></view>
+  </view>
+</template>

@@ -1,0 +1,20 @@
+<!--pages/total24h/total24h.wxml-->
+<view class="container">
+  <view class="top">
+      <view class="current">当前城市： {{currentCity}}</view>
+      <image bindtap="gotoCity" class="icon-map" src="../../images/map.png"></image>
+    </view>
+  <view class="time-line">
+    <block wx:for="{{temData}}">
+      <view class="item">
+        <view class="item-time">{{item.time}}</view>
+        <view class="item-info">
+          <text>{{item.date}}</text>
+          <text>温度： {{item.temperature}}°C</text>
+          <image class="icon" src="{{item.icon}}"></image>
+          <text>{{item.text}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

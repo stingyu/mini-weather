@@ -1,0 +1,10 @@
+/* pages/me/help/help.wxss */
+.main {
+  width:100%;
+  background-color: #fff;
+  height:96vh;
+  text-align: center;
+  font-size:28rpx;
+  color: #999;
+  padding: 30rpx 15rpx;
+}

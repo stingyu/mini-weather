@@ -1,0 +1,56 @@
+<view class="main">
+  <view class="headView">
+    <text class="current">{{currentCity}}</text>
+    <view class='seachView'>
+      <image class="seachImg" src='/images/ic_search.png'></image>
+      <input placeholder="城市名" type='text' class="seachHit" bindinput="seachBind" value="{{seachValue}}" />
+    </view>
+  </view>
+  <scroll-view scroll-y="true" style="height:{{winHeight}}px" class="seachList" wx:if="{{seachVisited ==1}}">
+    <view wx:for="{{seachData}}" class='cityName' wx:key="index" data-text="{{item.name}}" wx:if="{{seachData != ''}}" bindtap='cityBind'>{{item.name}}</view>
+    <view class='cityName' wx:if="{{seachData == ''}}">抱歉，未找到相关位置，可尝试修改后重试</view>
+  </scroll-view>
+  <view class="searchLetter touchClass">
+    <view wx:for="{{searchLetter}}" style="height:{{itemH}}px" wx:key="index" data-letter="{{item}}" bindtap='searchLetterBind'>{{item}}</view>
+  </view>
+  <scroll-view scroll-y="true" style="height:{{winHeight}}px" wx:if="{{seachVisited == 2}}" bindscroll="bindScroll" scroll-into-view="{{showLetter}}">
+    <view class='cityList' wx:for="{{cityList}}" wx:key="{{item.initial}}" id="{{item.initial}}">
+      <block wx:if="{{index==0}}">
+        <view class="visitedView" wx:if="{{visitedData != ''}}">
+          <text class="titleText">当前定位/最近访问</text>
+          <view class="visitedList">
+            <view class="visitedItem">
+                <view class="visitedItems">
+                  <image class="seachImg" src='/images/ic_location_green.png'  ></image>
+                  <text class="cityTexts" bindtap='cityBind' data-text="{{curCity}}">{{curCity}}</text>
+                </view>
+              </view>
+            <block wx:for="{{visitedData}}" wx:for-item="visitedItem">
+              <view style='text-align:center;' wx:if="{{visitedItem !== curCity}}" class="visitedItem">
+                <view class="visitedItems">
+                  <text class="{{current == visitedItem ?'cityTexts':'cityTexts_selected'}}" bindtap='cityBind' data-text="{{visitedItem}}">{{visitedItem}}</text>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class="visitedView" style="padding-bottom: 30rpx;">
+          <text class="titleText">热门城市</text>
+          <view class="visitedList">
+            <block wx:for="{{hotData}}" wx:for-item="hotItem">
+              <view class="visitedItem">
+                <text class='cityText' bindtap='cityBind' data-text="{{hotItem}}">{{hotItem}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class="p1_grey"></view>
+      </block>
+      <view class='cityCapital'>{{item.initial}}</view>
+      <view class='classifyList' wx:for="{{item.cityInfo}}" wx:for-item="item1" wx:for-index="idx" data-text="{{item1.name}}" bindtap='cityBind'>
+        <view class='cityName'>{{item1.name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class='top_line'></view>

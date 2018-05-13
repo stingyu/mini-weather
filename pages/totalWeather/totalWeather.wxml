@@ -1,0 +1,20 @@
+<!--pages/totalWeather/totalWeather.wxml-->
+<view class="container total-page">
+  <view class="section">
+    <view class="top">
+      <view class="current">当前城市： {{currentCity}}</view>
+      <image bindtap="gotoCity" class="icon-map" src="../../images/map.png"></image>
+    </view>
+    <view class="main">
+      <block wx:for="{{weather}}">
+        <view class="item">
+          <text>{{item.date}}</text>
+          <text>{{item.day}}</text>
+          <image class="icon-weather" src="{{item.icon}}"></image>
+          <text>{{item.text}}</text>
+          <text>{{item.low}}~{{item.high}}°C</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

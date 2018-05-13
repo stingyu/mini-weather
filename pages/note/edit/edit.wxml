@@ -1,0 +1,10 @@
+<!--pages/note/edit/edit.wxml-->
+<view class="container">
+  <view class="main">
+  <view class="title">编辑信息:</view>
+    <form bindsubmit="bindFormSubmit">
+      <textarea auto-height placeholder="form 中的 textarea" name="content" />
+      <button form-type="submit"> 完成 </button>
+    </form>
+  </view>
+</view>

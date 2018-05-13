@@ -1,0 +1,181 @@
+page {
+  background: #f6f6f6;
+}
+
+.headView {
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 15rpx 20rpx 15rpx 20rpx;
+}
+
+.current {
+width: 160rpx;
+font-size: 32rpx;
+color: #333;
+margin-right: 30rpx;
+text-overflow: ellipsis;
+overflow: hidden;
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-align: center;
+-webkit-box-orient: vertical;
+}
+
+.seachView {
+flex: 1;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding-left: 20rpx;
+padding-right: 20rpx;
+border: 0.5rpx solid #f6f6f6;
+border-radius: 58rpx;
+background: #fff;
+}
+
+.seachImg {
+height: 32rpx;
+width: 32rpx;
+margin-right: 10rpx;
+margin-left: 20rpx;
+}
+
+.seachHit {
+padding-top: 9rpx;
+padding-bottom: 9rpx;
+font-size: 28rpx;
+color: #333;
+}
+
+.visitedView {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 40rpx 30rpx 40rpx;
+  background: #fff;
+  border-bottom: 0.5rpx solid #f8f8f8;
+}
+
+.titleText {
+  font-size: 32rpx;
+  color: grey;
+}
+
+.visitedList {
+  width: 650rpx;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.visitedItem {
+  width: 160rpx;
+  background: rgb(245, 245, 245);
+  margin-right: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.5rpx solid rgb(186, 186, 186);
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border-radius: 15rpx;
+  margin-top: 30rpx;
+}
+
+.visitedItems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cityText {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.cityTexts_selected {
+  width: 118rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-align: center;
+  -webkit-box-orient: vertical;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.cityTexts{
+  width: 118rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.cityView {
+  display: flex;
+  flex-direction: column;
+}
+
+.cityCapital {
+  font-size: 32rpx;
+  color: grey;
+  padding: 15rpx 40rpx 15rpx 40rpx;
+}
+
+.classifyList {
+  padding: 0rpx 40rpx 0rpx 40rpx;
+  background: #fff;
+}
+
+.cityName {
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  font-size: 32rpx;
+  color: #333;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+
+.searchLetter {
+  margin-top: 40rpx;
+  position: fixed;
+  right: 0;
+  width: 25px;
+  text-align: center;
+  margin-right: 10rpx;
+  justify-content: center;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  z-index: 1;
+  padding-bottom: 10rpx;
+}
+
+.touchClass {
+  right: 0;
+  color: #FEC410;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.seachList {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 40rpx 0rpx 40rpx;
+  border-top: 1rpx solid #f8f8f8;
+  background: #fff;
+  z-index: 1;
+}
+.visitedItem:active,.classifyList:active {
+  background-color: rgba(0,0,0,0.1);
+}

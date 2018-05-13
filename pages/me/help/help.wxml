@@ -1,0 +1,6 @@
+<!--pages/me/help/help.wxml-->
+<view class="container">
+  <view class="main">
+    使用说明
+  </view>
+</view>

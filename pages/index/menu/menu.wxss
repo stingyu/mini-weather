@@ -1,0 +1,27 @@
+/* pages/index/menu/menu.wxss */
+.main-menu {
+  background-color: #fff;
+  border-radius: 15rpx;
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:25rpx;
+  padding-bottom:25rpx;
+}
+.item-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size:32rpx;
+  color: rgb(33,33,33);
+  width:95%;
+  border-bottom:1rpx solid #ccc;
+  height: 110rpx;
+}
+.icon-next {
+  width:35rpx;
+  height:35rpx;
+}

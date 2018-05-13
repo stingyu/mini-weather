@@ -1,0 +1,336 @@
+.container {
+  min-height: 100vh;
+  width: 750rpx;
+  background-color: #f0f0f0;
+  padding: 15rpx 25rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.top-line,
+.bottom-line {
+  border-top: 1rpx solid #ccc;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+.top-line {
+  top: 0;
+}
+.bottom-line {
+  bottom: 0;
+}
+.button-hover {
+  background-color: rgba(156, 156, 156, 0.6);
+}
+script {
+  display: none;
+}
+/* 天气icon*/
+/**
+* Create circle element
+* -------------------------
+*
+* @param {int} diameter
+*/
+/**
+* Create sun rays
+* -------------------------
+* central circle and 4 "rays" (at N, E, S, W)
+* 
+*/
+/**
+* Weather element
+* -------------------------
+*/
+.icon-weather {
+  position: relative;
+  float: left;
+}
+.icon-weather > .icon-weather {
+  position: absolute;
+  margin: 0;
+  float: none;
+}
+/**
+* Sun element
+* -------------------------
+*/
+.sun {
+  font-size: 7rem;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background: linear-gradient(90deg, transparent 0.46em, #ffd243 0, #ffd243 0.54em, transparent 0) no-repeat 0 0, /*W*/ linear-gradient(transparent 0.46em, #ffd243 0, #ffd243 0.54em, transparent 0) no-repeat 0 0, /*S*/ linear-gradient(90deg, transparent 0.46em, #ffd243 0, #ffd243 0.54em, transparent 0) no-repeat 0 100%, /*E*/ linear-gradient(transparent 0.46em, #ffd243 0, #ffd243 0.54em, transparent 0) no-repeat 100% 0, /* middle */ radial-gradient(circle, #ffd243 0, #ffd243 0.27em, transparent 0, transparent 100%) no-repeat center center;
+  background-size: 1em 0.18em, /*W*/ 0.18em 1em, /*S*/ 1em 0.18em, /*E*/ 0.18em 1em, /*middle*/ 1em 1em;
+  z-index: 1;
+}
+.sun:after,
+.sun:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background: linear-gradient(90deg, transparent 0.46em, #ffd243 0, #ffd243 0.54em, transparent 0) no-repeat 0 0, /*W*/ linear-gradient(transparent 0.46em, #ffd243 0, #ffd243 0.54em, transparent 0) no-repeat 0 0, /*S*/ linear-gradient(90deg, transparent 0.46em, #ffd243 0, #ffd243 0.54em, transparent 0) no-repeat 0 100%, /*E*/ linear-gradient(transparent 0.46em, #ffd243 0, #ffd243 0.54em, transparent 0) no-repeat 100% 0, /* middle */ radial-gradient(circle, #ffd243 0, #ffd243 0.27em, transparent 0, transparent 100%) no-repeat center center;
+  background-size: 1em 0.18em, /*W*/ 0.18em 1em, /*S*/ 1em 0.18em, /*E*/ 0.18em 1em, /*middle*/ 1em 1em;
+  backface-visibility: hidden;
+}
+.sun:before {
+  transform: rotate(30deg);
+}
+.sun:after {
+  transform: rotate(-30deg);
+}
+/**
+* Sun modifiers
+*/
+.sun--with-cloud {
+  position: relative;
+}
+/**
+* Moon element
+* -------------------------
+*/
+.moon {
+  font-size: 6rem;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background: #969696;
+  z-index: 1;
+}
+.moon:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  bottom: 0.15em;
+  left: 0.3em;
+  background: white;
+  transform: rotate(-30deg);
+  clip: rect(0.02em, 0.68em, 0.98em, 0);
+}
+.moon--with-cloud {
+  position: relative;
+}
+/**
+* Cloud element
+* -------------------------
+*/
+.cloud {
+  font-size: 6rem;
+  width: 0.37em;
+  height: 0.37em;
+  border-radius: 0.37em;
+  width: 1em;
+  border: 0.08em solid;
+  background: white;
+  box-shadow: 0 0 0 0.1em #fff;
+  z-index: 2;
+}
+.cloud:before,
+.cloud:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 0.08em solid;
+  background-clip: padding-box;
+  background: white;
+  transform-origin: 50% 50%;
+}
+.cloud:before {
+  width: 0.42em;
+  height: 0.42em;
+  border-radius: 0.42em;
+  top: -0.25em;
+  left: 0.12em;
+  transform: rotate(15deg);
+  /* width+2*border */
+  /* (width/2)+border */
+  clip: rect(0, 0.58em, 0.29em, 0);
+}
+.cloud:after {
+  width: 0.21em;
+  height: 0.21em;
+  border-radius: 0.21em;
+  top: -0.085em;
+  left: -0.085em;
+  /* width+(2*border) */
+  /* (width/2)+border */
+  clip: rect(0, 0.37em, 0.185em, 0);
+  transform: rotate(-30deg);
+}
+.sun .cloud {
+  top: 0.27em;
+  right: 0.27em;
+  box-shadow: 0 0 0 0.08em white, /* hide suns rays */ -0.17em 0.33em 0 -0.08em white, -0.17em -0.33em 0 -0.08em white;
+}
+.moon .cloud {
+  top: 0.28em;
+  right: 0.36em;
+  box-shadow: 0 0 0 0.04em #fff;
+}
+/**
+* Cloud modifiers
+* -------------------------
+*/
+.cloud--silver {
+  border-color: #ccc;
+}
+.cloud--silver:before,
+.cloud--silver:after {
+  border-color: #ccc;
+}
+.cloud--black {
+  border-color: #444;
+}
+.cloud--black:before,
+.cloud--black:after {
+  border-color: #444;
+}
+/**
+* Rain element
+* -------------------------
+*/
+.rain {
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 125%;
+  background: white;
+  z-index: 3;
+}
+.rain:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 18%;
+  width: 60%;
+  height: 80%;
+  background: #5999CE;
+  border-radius: 50% 0 50% 50%;
+  transform: skewX(-10deg) skewY(-10deg) rotateZ(-10deg);
+}
+/**
+* Rain modifiers
+* -------------------------
+*/
+.rain--heavy:before {
+  box-shadow: -3rem 1rem 0 0 #5999CE;
+}
+/**
+* Snow element
+* -------------------------
+*/
+.snow {
+  font-size: inherit;
+  top: 60%;
+  left: 48%;
+  width: 5%;
+  height: 100%;
+  background: #969696;
+  z-index: 3;
+  box-shadow: 0 0.2em 0 0.2em white;
+}
+.snow:before,
+.snow:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #969696;
+}
+.snow:before {
+  transform: rotate(60deg);
+}
+.snow:after {
+  transform: rotate(-60deg);
+}
+/**
+* Snow modifiers
+* -------------------------
+*/
+.snow--heavy {
+  font-size: inherit;
+  box-shadow: -0.2em 0.21em 0 0 #969696, 0 0.2em 0 0.2em white;
+}
+.snow--heavy:before {
+  box-shadow: 0.08em 0.28em 0 0 #969696;
+}
+.snow--heavy:after {
+  box-shadow: -0.28em -0.07em 0 0 #969696;
+}
+/**
+* Hail element
+* -------------------------
+*/
+.hail {
+  font-size: inherit;
+  top: 28%;
+  left: 30%;
+  width: 0.34em;
+  height: 0.34em;
+  background: white;
+  border: 0.09em solid white;
+  z-index: 3;
+}
+.hail:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: #969696;
+}
+/**
+* Hail modifiers
+* -------------------------
+*/
+.hail--heavy {
+  font-size: inherit;
+}
+.hail--heavy:before {
+  box-shadow: -0.2em 0.2em 0 0 #969696;
+}
+/**
+* Lightning element
+* -------------------------
+*/
+.lightning {
+  font-size: inherit;
+  top: 33%;
+  left: 30%;
+  width: 23%;
+  height: 210%;
+  background: #FDEC38;
+  box-shadow: -0.12em 0 0 0 white;
+  transform: skewX(-30deg);
+  z-index: 3;
+}
+.lightning:before,
+.lightning:after {
+  content: "";
+  position: absolute;
+  height: 43%;
+  background: white;
+}
+.lightning:before {
+  width: 60%;
+  top: 0;
+  right: -10%;
+  transform: skewX(-5deg);
+}
+.lightning:after {
+  width: 100%;
+  bottom: 0;
+  left: -15%;
+  transform: skewX(15deg);
+}

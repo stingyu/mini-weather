@@ -1,0 +1,44 @@
+<import src="../../component/weather.wxml" />
+<view class="container index-page">
+  <view class="top-bar">
+    <image bindtap='gotoMenu' class="icon icon-menu" src="../../images/database.png" />
+    <view class="location" bindtap="gotoCity">
+      <view class="current-city">{{currentCity}}</view>
+      <!-- <view class="current-city-pin">GuangZhou</view> -->
+    </view>
+    <image class="icon icon-update" src="../../images/update.png" />
+  </view>
+  <view class="main">
+        <view class="swiper-item">
+          <view class="weather-info">
+            <view class="item-info" style="border-bottom: 1rpx solid #ccc;">
+              <template is="{{icon_name_first}}"/>
+              <view class="day-info">
+                <view class="day-intro">
+                  <text class="logo">今天</text>
+                  <text style="margin-right: 8rpx;">{{weatherInfo[0].day}}</text>
+                  <text>{{weatherInfo[0].date}}</text>
+                </view>
+                <view class="tem-intro">{{weatherInfo[0].low}} ~ {{weatherInfo[0].high}}°C</view>
+                <view class="text-intro">{{weatherInfo[0].text}}</view>
+                <view class="wind-intro">{{weatherInfo[0].wind}}</view>
+              </view>
+            </view>
+            <view class="item-info">
+              <template is="{{icon_name_second}}"/>
+              <view class="day-info">
+                <view class="day-intro">
+                  <text class="logo">明天</text>
+                  <text style="margin-right: 8rpx;">{{weatherInfo[1].day}}</text>
+                  <text>{{weatherInfo[1].date}}</text>
+                </view>
+                <view class="tem-intro">{{weatherInfo[1].low}} ~ {{weatherInfo[1].high}}°C</view>
+                <view class="text-intro">{{weatherInfo[1].text}}</view>
+                <view class="wind-intro">{{weatherInfo[1].wind}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+  </view>
+  <button class="share-btn" hover-class="button-hover" open-type="share">分享给好友</button>
+</view>

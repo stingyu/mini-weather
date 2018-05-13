@@ -1,0 +1,32 @@
+<!--pages/me/me.wxml-->
+<view class="container me-page">
+  <view class="app-intro">
+    <image class="logo" src="../../images/th.jpg"></image>
+    <view class="name">mini天气</view>
+    <view class="descri">
+      <view>"mini天气"是一款免费为用户提供查询全国各地城市天气信息，未来十天，编辑备忘录等功能的微信小程序。</view>
+      <view>您的每一次使用、每一条反馈，都是我们进步的动力。如遇到技术问题，可联系wechat:a1372997024.</view>
+    </view>
+  </view>
+  <view class="menu-list">
+    <view class="item-list">
+    <button class="btn-chat" open-type="contact" style="position:static;">
+      <image class="item-icon" src="../../images/chat.png"></image>
+      <view class="option">联系客服</view>
+      <image class="arrow" src="../../images/next.png"></image>
+    </button>
+    </view>
+    <view class="item-list" bindtap="gotohelp" style="position:relative;z-index:2;">
+      <image class="item-icon" src="../../images/help.png"></image>
+      <view class="option">使用帮助</view>
+      <image class="arrow" src="../../images/next.png"></image>
+    </view>
+    <view class="item-list" style="border:none;" style="position:relative;z-index:2;">
+      <image class="item-icon" src="../../images/desk.png"></image>
+      <view class="option">添加到桌面</view>
+      <image class="arrow" src="../../images/next.png"></image>
+    </view>
+  </view>
+  <button class="btn-query btn" bindtap='gotoIndex'>查询天气</button>
+  <button class="btn-send btn" open-type='share'>推荐给朋友</button>
+</view>

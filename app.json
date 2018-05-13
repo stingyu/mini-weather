@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/totalWeather/totalWeather",
+    "pages/total24h/total24h",
+    "pages/index/menu/menu",
+    "pages/me/me",
+    "pages/me/help/help", 
+    "pages/note/note",
+    "pages/note/edit/edit",
+    "pages/citySelect/citySelect"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "mini天气",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+      "color": "#707070",
+      "selectedColor": "#f3b13c",
+      "backgroundColor": "#fff",
+      "borderStyle": "black",
+      "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "./images/tabbars/hom_fill.png",
+        "iconPath": "./images/tabbars/hom.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/note/note",
+        "selectedIconPath": "./images/tabbars/folder_fill.png",
+        "iconPath": "./images/tabbars/fold.png",
+        "text": "备忘录"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "selectedIconPath": "./images/tabbars/more_fill.png",
+        "iconPath": "./images/tabbars/more.png",
+        "text": "产品"
+      }
+    ]
+  },
+    "networkTimeout": {
+      "request": 5000,
+      "downloadFile": 10000
+  },
+    "debug": true
+
+}

@@ -1,0 +1,30 @@
+/* pages/note/edit/edit.wxss */
+.main {
+  width:95%;
+  min-height: 90vh;
+  background-color: #fff;
+  border-radius: 15rpx;
+  padding: 30rpx 25rpx;
+}
+button {
+  width:25%;
+  height: 70rpx;
+  line-height:70rpx;
+  color:#fff;
+  background-color: #f3b13c;
+  margin-top: 35rpx;
+  position: relative;
+  left:253rpx;
+}
+textarea {
+  min-height: 400rpx;
+  width:100%;
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+}
+.title {
+  font-size: 32rpx;
+  color: rgb(33,33,33);
+  margin-top:30rpx;
+  margin-bottom: 20rpx;
+}

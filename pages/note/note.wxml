@@ -1,0 +1,19 @@
+<!--pages/note/note.wxml-->
+<view class="note-page container">
+  <view class="top-title">备忘录</view>
+  <view class="main-note">
+    <block wx:for="{{notes}}">
+      <view class="item-note">
+        <view class="content-note">{{item.content}}</view>
+        <view class="option-note">
+          <image class="icon icon-edit" src="../../images/pen.png"></image>
+          <image class="icon icon-delete" src="../../images/delete_1.png"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="add-note">
+    <!-- <input type="text" placeholder='请输入信息'></input> -->
+    <image bindtap="gotoEdit" class="icon-add" src="../../images/add.png"></image>
+  </view>
+</view>
