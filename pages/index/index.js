@@ -10,10 +10,6 @@ Page({
     weatherInfo:[],
     icon_name_second: '',
     icon_name_first: '',
-    indicatorDots: false,
-    autoplay: false,
-    interval: 5000,
-    duration: 1000,
   },
   gotoCity() {
     wx.navigateTo({
@@ -27,79 +23,100 @@ Page({
   },
   transformCode(code,isFirst) {
     let that = this
-    switch (+code) {
-      case 0 || 2 || 38:
-        if (isFirst) {
+    switch (parseInt(code)) {
+      case 0: case 2: case38:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'sun' });
         } else {
           that.setData({ icon_name_second: 'sun' });
         }
         break;
-      case 1 || 3:
-        if (isFirst) {
+      case 1: case 3:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'moon' });
         } else {
           that.setData({ icon_name_second: 'moon' });
         }
         break;
-      case 4 || 6 || 8 || 9:
-        if (isFirst) {
+      case 4:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'cloud' });
         } else {
           that.setData({ icon_name_second: 'cloud' });
         }
         break;
-      case 5 || 7:
-        if (isFirst) {
+      case 6: case 8:
+        if (isFirst === true) {
+          that.setData({ icon_name_first: 'moon-cloud' });
+        } else {
+          that.setData({ icon_name_second: 'moon-cloud' });
+        }
+        break;
+      case 9:
+        if (isFirst === true) {
+          that.setData({ icon_name_first: 'more-cloud' });
+        } else {
+          that.setData({ icon_name_second: 'more-cloud' });
+        }
+        break;
+      case 5:case 7:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'sun-cloud' });
         } else {
           that.setData({ icon_name_second: 'sun-cloud' });
         }
         break;
-      case 10 || 11 || 12 || 13 || 14:
-        if (isFirst) {
+      case 10: case 13: case 14:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'rain' });
         } else {
           that.setData({ icon_name_second: 'rain' });
         }
         break;
-      case 15 || 16 || 17 || 18 || 19:
-        if (isFirst) {
+      case 11: case 12:
+        if (isFirst === true) {
+          that.setData({ icon_name_first: 'lightning' });
+        } else {
+          that.setData({ icon_name_second: 'lightning' });
+        }
+        break;
+      case 15: case 16: case 17: case 18: case 19:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'heavy-rain' });
         } else {
           that.setData({ icon_name_second: 'heavy-rain' });
         }
         break;
-      case 20 || 21 || 22 || 23:
-        if (isFirst) {
+      case 20: case 21: case 22: case 23:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'snow' });
         } else {
           that.setData({ icon_name_second: 'snow' });
         }
         break;
-      case 24 || 25:
-        if (isFirst) {
+      case 24 : case 25:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'heavy-snow' });
         } else {
           that.setData({ icon_name_second: 'heavy-snow' });
         }
         break;
-      case 26 || 27 || 28:
-        if (isFirst) {
+      case 26 : case 27: case 28:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'hail' });
         } else {
           that.setData({ icon_name_second: 'hail' });
         }
         break;
-      case 29 || 30 || 31:
-        if (isFirst) {
+      case 29 : case 30 : case 31:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'heavy-hail' });
         } else {
           that.setData({ icon_name_second: 'heavy-hail' });
         }
         break;
-      case 32 || 33 || 34 || 35 || 36 || 37:
-        if (isFirst) {
+      case 32: case 33: case 34: case 35:case 36 : case 37:
+        if (isFirst === true) {
           that.setData({ icon_name_first: 'cloud' });
         } else {
           that.setData({ icon_name_second: 'cloud' });
@@ -119,14 +136,17 @@ Page({
         if(res.data.status === 'OK' && res.data.weather.length !== 0) {
           let data = res.data.weather[0];
           let weatherInfo = [data.future[0],data.future[1]];
+          for(let i =0;i<weatherInfo.length;i++) {
+            let text = weatherInfo[i].text.replace(/\//g,'~')
+            weatherInfo[i].text = text
+          }
           that.transformCode(data.future[0].code1,true);
           that.transformCode(data.future[1].code1,false);
           that.setData({
-            currentCity: data.city_name,
+            currentCity: wx.getStorageSync('currentCity'),
             weatherInfo: weatherInfo
           })
         }
-
       },
       function(res) {
 

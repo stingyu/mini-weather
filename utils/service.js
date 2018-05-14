@@ -9,11 +9,12 @@ const service = {
   //加载note
   load: `${host}/api/notes`,
   //删除note
-  delete: `${host}/api/notes/delete`,
+  delete_note: `${host}/api/notes/delete`,
   //添加note
   add: `${host}/api/notes/add`,
   //编辑note
   edit: `${host}/api/notes/edit`,
+  clear: `${host}/api/notes/clear`,
   host,
   weatherAPI,
   _24hour,

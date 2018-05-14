@@ -8,6 +8,7 @@
     "pages/me/help/help", 
     "pages/note/note",
     "pages/note/edit/edit",
+    "pages/note/update/update",
     "pages/citySelect/citySelect"
   ],
   "window":{
@@ -43,7 +44,7 @@
     ]
   },
     "networkTimeout": {
-      "request": 5000,
+      "request": 60000,
       "downloadFile": 10000
   },
     "debug": true

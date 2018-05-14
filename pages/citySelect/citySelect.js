@@ -36,7 +36,7 @@ Page({
     } else {
       var currentCity = wx.getStorageSync('currentCity');
     }
-    /*if (wx.getStorageSync('currentCity')) {
+    if (wx.getStorageSync('currentCity')) {
       that.setData({
         curCity: wx.getStorageSync('currentCity')
       })
@@ -44,7 +44,7 @@ Page({
       that.setData({
         curCity: '未知'
       })
-    }*/
+    }
     this.setData({
       winHeight: winHeight,
       itemH: itemH,

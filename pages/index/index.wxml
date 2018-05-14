@@ -6,7 +6,7 @@
       <view class="current-city">{{currentCity}}</view>
       <!-- <view class="current-city-pin">GuangZhou</view> -->
     </view>
-    <image class="icon icon-update" src="../../images/update.png" />
+    <image bindtap="LoadData" class="icon icon-update" src="../../images/update.png" />
   </view>
   <view class="main">
         <view class="swiper-item">

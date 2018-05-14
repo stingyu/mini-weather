@@ -2,18 +2,17 @@
 <view class="note-page container">
   <view class="top-title">备忘录</view>
   <view class="main-note">
-    <block wx:for="{{notes}}">
+    <block wx:for="{{notesData}}">
       <view class="item-note">
-        <view class="content-note">{{item.content}}</view>
+        <view class="content-note">{{item.text}}</view>
         <view class="option-note">
-          <image class="icon icon-edit" src="../../images/pen.png"></image>
-          <image class="icon icon-delete" src="../../images/delete_1.png"></image>
+          <image class="icon icon-edit" src="../../images/pen.png" data-id="{{item.id}}" data-text="{{item.text}}" bindtap='editNote'></image>
+          <image class="icon icon-delete" src="../../images/delete_1.png" data-id="{{item.id}}" bindtap='deleteNote'></image>
         </view>
       </view>
     </block>
   </view>
   <view class="add-note">
-    <!-- <input type="text" placeholder='请输入信息'></input> -->
-    <image bindtap="gotoEdit" class="icon-add" src="../../images/add.png"></image>
+    <image bindtap='addNote' class="icon-add" src="../../images/add.png"></image>
   </view>
 </view>

@@ -16,6 +16,10 @@
   width:100%;
   border-radius:10rpx 10rpx 0 0;
 }
+.content-note {
+  padding-top:10rpx;
+  padding-bottom:10rpx;
+}
 .main-note {
   display: flex;
   flex-direction: column;
@@ -32,8 +36,7 @@
   align-items:center;
   justify-content:space-between;
   width:83%;
-  height:110rpx;
-  line-height:110rpx;
+  line-height:60rpx;
   margin-left:80rpx;
   padding-right:40rpx;
   border-bottom:1rpx solid #ccc;

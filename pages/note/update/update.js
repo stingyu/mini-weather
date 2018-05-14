@@ -1,4 +1,4 @@
-// pages/note/edit/edit.js
+// pages/note/update/update.js
 const http = require('../../../utils/service.js')
 const $ajax = require('../../../utils/http.js')
 Page({
@@ -7,22 +7,24 @@ Page({
    * 页面的初始数据
    */
   data: {
+    text:''
   
   },
-  addNote(value) {
-    console.log(value)
+  editNote(value) {
+    let that = this
     $ajax._postmy(
-      http.service.add,
+      http.service.edit,
       {
-        note: value
+        note: value,
+        id: that.data.id
       },
       function (res) {
         if (res.data.status === 0) {
           wx.showToast({
-            title: '添加成功',
+            title: '编辑成功',
             icon: "success",
             success: function () {
-              wx.setStorageSync('isfrom', "add")
+              wx.setStorageSync('isfrom', "edit")
               wx.navigateBack()
             }
           })
@@ -37,7 +39,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.data.id = options.id;
+    this.setData({
+      text: options.value
+    })
   },
 
   /**
@@ -89,8 +94,7 @@ Page({
   
   },
   bindFormSubmit: function (e) {
-    console.log(e.detail.value.content)
     let value = e.detail.value.content
-    this.addNote(value)
+    this.editNote(value)
   }
 })

@@ -48,7 +48,7 @@ function _postmy(url, data, success, fail) {
     method: 'POST',
     data: data || {},
     success: function (res) {
-      if(res.data.statusCode === 200) {
+      if(res.statusCode === 200) {
         console.log('--------------------------开始--------------------------')
         console.log('0.返回情况:success')
         console.log('1.请求地址')

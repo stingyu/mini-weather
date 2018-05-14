@@ -69,7 +69,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this
+    if (wx.getStorageSync('isfrom') === 'citySelect') {
+      that.setData({
+        currentCity: wx.getStorageSync('currentCity')
+      })
+      that.LoadData(wx.getStorageSync('currentCity'))
+    }
   },
 
   /**

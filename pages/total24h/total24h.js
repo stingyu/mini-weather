@@ -67,6 +67,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) { 
+    var that = this
+    if (wx.getStorageSync('currentCity') == undefined || wx.getStorageSync('currentCity') == '') {
+      wx.navigateTo({
+        url: '../citySelect/citySelect',
+      })
+    } else {
+      that.setData({
+        currentCity: wx.getStorageSync('currentCity')
+      })
+      that.LoadData(wx.getStorageSync('currentCity'))
+    }
   },
 
   /**
@@ -81,11 +92,7 @@ Page({
    */
   onShow: function () {
     var that = this
-    if (wx.getStorageSync('currentCity') == undefined || wx.getStorageSync('currentCity') == '') {
-      wx.navigateTo({
-        url: '../citySelect/citySelect',
-      })
-    } else {
+    if (wx.getStorageSync('isfrom') === 'citySelect') {
       that.setData({
         currentCity: wx.getStorageSync('currentCity')
       })

@@ -7,7 +7,7 @@
 <template name="cloud">
   <view class="icon-weather cloud cloud--silver"></view>
 </template>
-<template name="cloud-black">
+<template name="more-cloud">
   <view class="icon-weather cloud cloud--black"></view>
 </template>
 <template name="sun-cloud">
@@ -30,7 +30,7 @@
     <view class="icon-weather rain rain--heavy"></view>
   </view>
 </template>
-<template name="cloud-rain">
+<template name="sun-rain">
   <view class="icon-weather sun sun--with-cloud">
     <view class="icon-weather cloud cloud--black">
       <view class="icon-weather rain"></view>
